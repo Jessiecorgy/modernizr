@@ -1,20 +1,46 @@
-/* Your Styling */
+/* Your Styling these are all fallbacks*/
 
-h1 {
-	background: #f0f;
-	color: #fff;
-	margin: 2em auto 0 auto;
-	height: 100px;
-	width: 100px;
-
-	/* Horiz Center*/
-	text-align: center;
-	line-height: 100px;
-	/* Make into Circle */
-	border-radius: 100px;
+/*For older browser*/
+html.no-svg .nay,
+html.no-touch .nay {
+	color: red;
+}
+    /*If it doesnt support svg then hude the yay!*/
+html.no-svg .yay,
+html.no-touch .yay {
+	display: none;
 }
 
-h1:hover {
-	background: black;
-	transition: background .5s; 
+
+/*Modern Browser*/
+html.svg .yay,
+html.touch .yay {
+	color: teal;
+}
+    /*if it supports svg then hide the nay!*/
+html.svg .nay,
+html.touch .nay {
+	display: none;
+}
+/* Not specific enough
+#svg-logo {
+	
+} */
+
+/* New browser*/
+html.svg #svg-logo {
+	width: 15%;
+}
+
+html.no-svg #svg-logo {
+	display: none;
+}
+
+/* old browser*/
+html.svg #png-logo {
+	display: none;
+}
+
+html.no-svg #png-logo {
+	background: red;
 }
